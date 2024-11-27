@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactFlow, { 
   Controls, 
-  Background,
   NodeTypes,
   EdgeTypes
 } from 'reactflow';
