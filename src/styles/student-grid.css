@@ -1,0 +1,85 @@
+.student-container {
+  min-height: 200vh;
+  background: #f5f5f5;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  transition: all 0.8s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.student-grid.scrolled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.student-item {
+  cursor: pointer;
+  transition: all 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center;
+}
+
+.student-item.focused {
+  transform: scale(2.5);
+  z-index: 10;
+}
+
+.student-item.fade-out {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.student-item .brain-image {
+  width: 200px;
+  height: 200px;
+  transition: all 0.8s ease;
+}
+
+.student-item .mini-graph {
+  width: 150px;
+  height: 150px;
+}
+
+.student-name {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.8s ease;
+}
+
+.focused-view {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.focused-view.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} 
