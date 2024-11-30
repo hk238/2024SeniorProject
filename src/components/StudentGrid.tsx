@@ -30,25 +30,30 @@ const StudentGrid: React.FC = () => {
   }, [isScrolled]);
 
   return (
-    <div className="student-container">
-      <div className={`student-grid ${isScrolled ? 'scrolled' : ''}`}>
-        {Array(15).fill(0).map((_, index) => (
-          <div 
-            key={index} 
-            className={`student-item ${focusedIndex === index ? 'focused' : ''} ${
-              focusedIndex !== null && focusedIndex !== index ? 'fade-out' : ''
-            }`}
-          >
-            <div className="brain-image">
-              <div className="mini-graph" />
+    <div className="page-container">
+      <div className="header-container">
+        <h1>2024 Calvin Senior Project: Heonjae Kwon & Jaden Brookens</h1>
+      </div>
+      <div className="student-container">
+        <div className={`student-grid ${isScrolled ? 'scrolled' : ''}`}>
+          {Array(15).fill(0).map((_, index) => (
+            <div 
+              key={index} 
+              className={`student-item ${focusedIndex === index ? 'focused' : ''} ${
+                focusedIndex !== null && focusedIndex !== index ? 'fade-out' : ''
+              }`}
+            >
+              <div className="brain-image">
+                <div className="mini-graph" />
+              </div>
+              <div className="student-name">Student {index + 1}</div>
             </div>
-            <div className="student-name">Student {index + 1}</div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className={`focused-view ${isScrolled ? 'visible' : ''}`}>
+          <BrainView />
       </div>
-      <div className={`focused-view ${isScrolled ? 'visible' : ''}`}>
-        <BrainView />
-      </div>
+    </div>
     </div>
   );
 };
