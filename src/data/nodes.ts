@@ -12,7 +12,7 @@ export const initialNodes: Node[] = [
 
   {
     id: 'social_engage_level',
-    position: { x: 100, y: 250 },
+    position: { x: 100, y: 350 },
     data: { 
       label: 'Social Engagement Level',
       description: 'Frequency of social interactions'
@@ -20,7 +20,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'stress',
-    position: { x: 400, y: 150 },
+    position: { x: 400, y: 200 },
     data: { 
       label: 'Stress',
       description: 'Stress from social interactions',
@@ -38,23 +38,25 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'need_for_time_alone',
-    position: { x: 700, y: 250 },
+    position: { x: 700, y: 350 },
     data: { 
       label: 'Need for Time Alone',
+      description: 'Need for time alone to recharge',
       formula: 'Stress'
     }
   },
   {
     id: 'cognitive_fatigue',
-    position: { x: 1000, y: 150 },
+    position: { x: 1000, y: 200 },
     data: { 
       label: 'Cognitive Fatigue',
+      description: 'Fatigue from mental activities',
       formula: 'Energy + Need for Time Alone'
     }
   },
   {
     id: 'motivation',
-    position: { x: 1300, y: 150 },
+    position: { x: 1300, y: 200 },
     data: { 
       label: 'Motivation',
       description: 'Student motivation level',
@@ -72,7 +74,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'behavior_engagement',
-    position: { x: 1600, y: 250 },
+    position: { x: 1600, y: 350 },
     data: { 
       label: 'Behavioral Engagement',
       description: 'Level of active participation',
@@ -80,12 +82,21 @@ export const initialNodes: Node[] = [
     }
   },
   {
+    id: 'absorption_capacity',
+    position: { x: 1900, y: 50 },
+    data: { 
+      label: 'Absorption Capacity',
+      description: 'Ability to absorb information',
+      formula: '(Cognitive Engagement + Behavioral Engagement) * absorption_capacity_multiplier'
+    }
+  },
+  {
     id: 'achievement',
-    position: { x: 1900, y: 150 },
+    position: { x: 2200, y: 200 },
     data: { 
       label: 'Achievement',
       description: 'Academic performance level',
-      formula: 'Cognitive Engagement + Behavioral Engagement'
+      formula: 'Absorption Capacity'
     }
   },
   {
@@ -99,7 +110,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'emotion',
-    position: { x: 2200, y: -50 },
+    position: { x: 2500, y: 50 },
     data: { 
       label: 'Emotion',
       description: 'Emotional state',
@@ -108,7 +119,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'self_esteem',
-    position: { x: 2200, y: 150 },
+    position: { x: 2500, y: 350 },
     data: { 
       label: 'Self-esteem',
       description: 'Belief in own abilities',
@@ -117,7 +128,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: 'self_reflection',
-    position: { x: 2500, y: 50 },
+    position: { x: 2800, y: 200 },
     data: { 
       label: 'Self-Reflection',
       description: 'Ability to reflect on experiences',
@@ -209,21 +220,30 @@ export const initialEdges = [
     }
   },
   {
-    id: 'e-ce-a',
+    id: 'e-ce-ac',
     source: 'cognitive_engagement',
-    target: 'achievement',
+    target: 'absorption_capacity',
     data: {
       relationship: 'influences',
       formula: 'cognitive_engagement * w + b'
     }
   },
   {
-    id: 'e-be-a',
+    id: 'e-be-ac',
     source: 'behavior_engagement',
-    target: 'achievement',
+    target: 'absorption_capacity',
     data: {
       relationship: 'influences',
       formula: 'behavior_engagement * w + b'
+    }
+  },
+  {
+    id: 'e-ac-a',
+    source: 'absorption_capacity',
+    target: 'achievement',
+    data: {
+      relationship: 'determines',
+      formula: 'absorption_capacity * w + b'
     }
   },
   {
