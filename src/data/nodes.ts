@@ -11,11 +11,32 @@ export const initialNodes: Node[] = [
   },
 
   {
+    id: 'Teacher_social_engagement',
+    position: { x: -200, y: 200 },
+    data: { 
+      label: 'Teacher Social Engagement',
+      description: 'Teacher social engagement level'
+    }
+  },
+
+  {
+    id: 'Student_social_engagement',
+    position: { x: -200, y: 500 },
+    data: { 
+      label: 'Student Social Engagement',
+      description: 'Student social engagement level'
+    }
+  },
+
+
+
+  {
     id: 'social_engage_level',
     position: { x: 100, y: 350 },
     data: { 
       label: 'Social Engagement Level',
-      description: 'Frequency of social interactions'
+      description: 'Social interactions that students perceive',
+      formula: 'Teacher_social_engagement + Student_social_engagement'
     }
   },
   {
@@ -138,6 +159,26 @@ export const initialNodes: Node[] = [
 ];
 
 export const initialEdges = [
+  {
+    id: 'e-ts-se',
+    source: 'Teacher_social_engagement',
+    target: 'social_engage_level',
+    data: {
+      relationship: 'influences',
+      formula: 'Teacher_social_engagement * w + b'
+    }
+  },
+
+  {
+    id: 'e-ss-se',
+    source: 'Student_social_engagement',
+    target: 'social_engage_level',
+    data: {
+      relationship: 'influences',
+      formula: 'Student_social_engagement * w + b'
+    }
+  },
+
   {
     id: 'e1-2',
     source: 'introversion_level',
