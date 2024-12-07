@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Graph from './Graph';
+import { useNavbar } from '../context/NavbarContext';
 
 interface NodeInfo {
   formula?: string;
@@ -10,6 +11,12 @@ const BrainView: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [hoveredNode, setHoveredNode] = useState<NodeInfo | null>(null);
   const [hoveredEdgeFormula, setHoveredEdgeFormula] = useState<string | null>(null);
+  const { setNavbarEnabled } = useNavbar();
+
+  useEffect(() => {
+    setNavbarEnabled(!isExpanded);
+    return () => setNavbarEnabled(true);
+  }, [isExpanded, setNavbarEnabled]);
 
   const handleBrainClick = () => {
     if (!isExpanded) {
