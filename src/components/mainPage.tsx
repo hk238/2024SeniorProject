@@ -1,4 +1,6 @@
 import '../styles/mainPage.css';
+import miniModelImg from '../assets/miniModel.png';
+import heonjaeImg from '../assets/HeonjaeKwon_headShot.jpg';
 
 const MainPage: React.FC = () => {
   return (
@@ -34,14 +36,21 @@ const MainPage: React.FC = () => {
               </p>
             </div>
             <div className="image-content">
-              {/* Background image will be added here */}
-              <img src="src\assets\miniModel.png" alt="Project Background" className="section-image" />
+              <img 
+                src={miniModelImg} 
+                alt="Project Background" 
+                className="section-image" 
+              />
             </div>
           </div>
 
           <div className="section-content right">
             <div className="image-content">
-              <img src="src\assets\HeonjaeKwon_headShot.jpg" alt="Heonjae Kwon" className="section-image" />
+              <img 
+                src={heonjaeImg} 
+                alt="Heonjae Kwon" 
+                className="section-image" 
+              />
             </div>
             <div className="text-content">
               <h3>Heonjae Kwon</h3>
