@@ -1,7 +1,7 @@
 import React from 'react';
-import StudentGrid from './components/StudentGrid';
-import './styles/student-grid.css';
 import './styles/brain.css';
+import './styles/student-grid.css';
+import StudentGrid from './components/StudentGrid';
 
 const App: React.FC = () => {
   return <StudentGrid />;

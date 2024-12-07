@@ -4,18 +4,41 @@ import BrainView from './BrainView';
 const StudentGrid: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+  const [gridColumns, setGridColumns] = useState(5);
   
   useEffect(() => {
+    const updateGridColumns = () => {
+      if (window.innerWidth <= 768) {
+        setGridColumns(2);
+      } else if (window.innerWidth <= 1024) {
+        setGridColumns(3);
+      } else if (window.innerWidth <= 1366) {
+        setGridColumns(4);
+      } else {
+        setGridColumns(5);
+      }
+    };
+
+    updateGridColumns();
+    window.addEventListener('resize', updateGridColumns);
+    return () => window.removeEventListener('resize', updateGridColumns);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
+      const viewportHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 300) {
+      const triggerPoint = viewportHeight * 0.8;
+      const resetPoint = viewportHeight * 0.4;
+
+      if (scrollPosition > triggerPoint) {
         if (!isScrolled) {
           setFocusedIndex(7);
           setTimeout(() => {
             setIsScrolled(true);
-          }, 1000);
+          }, 800);
         }
-      } else if (scrollPosition < 100) {
+      } else if (scrollPosition < resetPoint) {
         if (isScrolled) {
           setIsScrolled(false);
           setTimeout(() => {
@@ -34,8 +57,16 @@ const StudentGrid: React.FC = () => {
       <div className="header-container">
         <h1>2024 Calvin Senior Project: Heonjae Kwon & Jaden Brookens</h1>
       </div>
+
+
       <div className="student-container">
-        <div className={`student-grid ${isScrolled ? 'scrolled' : ''}`}>
+        <div 
+          className={`student-grid ${isScrolled ? 'scrolled' : ''}`}
+          style={{ 
+            gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+            gap: window.innerWidth <= 768 ? '1rem' : '2rem'
+          }}
+        >
           {Array(15).fill(0).map((_, index) => (
             <div 
               key={index} 
@@ -52,8 +83,8 @@ const StudentGrid: React.FC = () => {
         </div>
         <div className={`focused-view ${isScrolled ? 'visible' : ''}`}>
           <BrainView />
+        </div>
       </div>
-    </div>
     </div>
   );
 };
