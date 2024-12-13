@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Graph from './Graph';
 import { useNavbar } from '../context/NavbarContext';
+import miniModelImg from '../assets/miniModel.png';
 
 interface NodeInfo {
   formula?: string;
@@ -90,7 +91,10 @@ const BrainView: React.FC = () => {
           onClick={handleBrainClick}
         >
           <div className="brain-image">
-            <div className="mini-graph" />
+            <div 
+              className="mini-graph" 
+              style={{ backgroundImage: `url(${miniModelImg})` }}
+            />
           </div>
           <div className="brain-text">Click to explore student's cognitive model</div>
         </div>

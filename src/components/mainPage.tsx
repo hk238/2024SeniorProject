@@ -1,6 +1,7 @@
 import '../styles/mainPage.css';
 import miniModelImg from '../assets/miniModel.png';
 import heonjaeImg from '../assets/HeonjaeKwon_headShot.jpg';
+import jadenImg from '../assets/Jaden_headshot.jpg';
 
 const MainPage: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const MainPage: React.FC = () => {
             </div>
             <div className="image-content">
               <img 
-                src={miniModelImg} 
+                src = {miniModelImg}
                 alt="Project Background" 
                 className="section-image" 
               />
@@ -75,7 +76,7 @@ const MainPage: React.FC = () => {
               </ul>
             </div>
             <div className="image-content">
-              <img src="/path/to/jaden-image.jpg" alt="Jaden Brookens" className="section-image" />
+              <img src={jadenImg} alt="Jaden Brookens" className="section-image" />
             </div>
           </div>
         </section>
