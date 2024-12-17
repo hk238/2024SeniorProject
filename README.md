@@ -14,12 +14,18 @@ Advisor: Eric Araújo
 https://hk238.github.io/2024SeniorProject/
 
 
-## model diagram
-
-https://app.diagrams.net/#G1qHuohaZAi3y3aP2fndn2LhzI5UisDHT0#%7B%22pageId%22%3A%22stpxq4IpkF-ylpSXx0oc%22%7D
 
 
 
 ## project report
 
 [Report.docx](Report.docx)
+
+## code
+
+The code for this project is not available now, but it will be available soon.
+
+## model diagram
+
+[model diagram](https://drive.google.com/file/d/1xSVYtd6w78K-WdaY2509JwVabDO8J1Hl/view?usp=sharing)
+
