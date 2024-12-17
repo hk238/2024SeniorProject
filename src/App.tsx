@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/brain.css';
 import './styles/student-grid.css';
 import './styles/mainPage.css';
@@ -10,7 +10,7 @@ import { NavbarProvider } from './context/NavbarContext';
 const App: React.FC = () => {
   return (
     <NavbarProvider>
-      <Router basename="/2024SeniorProject">
+      <Router>
         <div className="app-container">
           <Navigation />
           <Routes>
