@@ -23,7 +23,7 @@ https://hk238.github.io/2024SeniorProject/
 
 ## presentation
 
-[cs396 senior project (2).pptx](cs396 senior project (2).pptx)
+[cs396 senior project (2).pptx]([cs396 senior project (2).pptx](https://github.com/hk238/2024SeniorProject/blob/master/cs396%20senior%20project%20(2).pptx))
 
 ## code
 
