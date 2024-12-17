@@ -25,6 +25,8 @@ const MainPage: React.FC = () => {
           </div>
         </header>
 
+
+
         <section className="content-section">
           <div className="section-content left">
             <div className="text-content">
@@ -80,6 +82,24 @@ const MainPage: React.FC = () => {
             </div>
           </div>
         </section>
+        <div className="document-links">
+          <a 
+            href="https://github.com/hk238/2024SeniorProject/blob/master/Report.docx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="doc-link"
+          >
+            Report
+          </a>
+          <a 
+            href="https://github.com/hk238/2024SeniorProject/blob/master/cs396%20senior%20project%20(2).pptx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="doc-link"
+          >
+            Slides
+          </a>
+        </div>
       </div>
     </div>
   );

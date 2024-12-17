@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/brain.css';
 import './styles/student-grid.css';
 import './styles/mainPage.css';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/about" element={<MainPage />} />
             <Route path="/demo" element={<StudentGrid />} />
-            <Route path="/" element={<Navigate to="/about" replace />} />
+            <Route path="/" element={<MainPage />} />
           </Routes>
         </div>
       </Router>

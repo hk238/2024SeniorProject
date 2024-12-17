@@ -21,6 +21,10 @@ https://hk238.github.io/2024SeniorProject/
 
 [Report.docx](Report.docx)
 
+## presentation
+
+[cs396 senior project (2).pptx](cs396 senior project (2).pptx)
+
 ## code
 
 The code for this project is not available now, but it will be available soon.
