@@ -13,6 +13,7 @@ const Navigation: React.FC = () => {
       <div className="nav-links">
         <Link to="/about" className="nav-link">About Us</Link>
         <Link to="/demo" className="nav-link">Demo</Link>
+        <Link to="https://github.com/hk238/2024SeniorProject" className="nav-link">Github</Link>
       </div>
     </nav>
   );
