@@ -33,3 +33,6 @@ The code for this project is not available now, but it will be available soon.
 
 [model diagram](https://drive.google.com/file/d/1xSVYtd6w78K-WdaY2509JwVabDO8J1Hl/view?usp=sharing)
 
+## code for fine tuning
+
+https://github.com/hk238/2024SeniorProject-fine_tuning
